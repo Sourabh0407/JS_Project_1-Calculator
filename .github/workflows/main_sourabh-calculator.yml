@@ -1,6 +1,9 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
 name: Build and deploy Node.js app to Azure Web App - Sourabh-Calculator
 
 on:
@@ -57,9 +60,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_2332CED01E484212B5C2390BF45A1A56 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_03E0D25C38334F57925AFC5663DF3F58 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_50D8883D4A084167BBC38C29D86BDEF6 }}
+          client-id: ${{ secrets.__clientidsecretname__ }}
+          tenant-id: ${{ secrets.__tenantidsecretname__ }}
+          subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -68,4 +71,3 @@ jobs:
           app-name: 'Sourabh-Calculator'
           slot-name: 'Production'
           package: .
-          
